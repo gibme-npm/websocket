@@ -60,10 +60,10 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.57.0.tgz"
   integrity "sha1-pUF66EJ4c/HdCLcLNXS0U+Z7X38= sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g=="
 
-"@gibme/auto-pack@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.npmjs.org/@gibme/auto-pack/-/auto-pack-0.4.2.tgz"
-  integrity "sha1-5NlXWekl9CmO7qSKNrK9hztnhVs= sha512-ooDpyH8evdHlPPkDQlMxnxgfyRv/QgxSlkrBNafLCaT19dtHrFeXTsEiL7SLfA25afSB48zVTu/OZtce4ZJkkg=="
+"@gibme/auto-pack@^0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@gibme/auto-pack/-/auto-pack-0.4.6.tgz#5ee2faa2b9b48a7702767a922a0d2fb890290fe2"
+  integrity sha512-JhtbEuH8Rxv+TXCT93Gg+8Il3f3kpGnY9mZvjLidt+2fUTsgokfcbEwH/31ytDdIn4NouZChEZHlyp3aivHFcg==
   dependencies:
     "@gibme/logger" "^1.0.10"
     css-loader "^6.8.1"
@@ -84,10 +84,10 @@
     dotenv "^16.4.5"
     winston "^3.13.1"
 
-"@gibme/timer@^1.0.12":
-  version "1.0.12"
-  resolved "https://registry.npmjs.org/@gibme/timer/-/timer-1.0.12.tgz"
-  integrity "sha1-trBzcpmg/GkKeX84G3c5KRHd7+M= sha512-zYmq63RSbAihO1xfwmYkiXB8fZzlG+XcmGo+qv+KG1Cf/Vt0v8MEk5VCN+I+3mY4dzcIgvQFWucxdaCgvqASJg=="
+"@gibme/timer@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@gibme/timer/-/timer-1.0.13.tgz#ef450b7c54517a834bc267207e5e81e7992741c1"
+  integrity sha512-Basv9F8HsyZ39fGYtkPWd8LgA1Vj6D3wb+OGc8q1/TSD5putsqD1olT+TxwSyxOGImSqwDm1hyOwM9sRKVg8qg==
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"

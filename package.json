@@ -45,7 +45,7 @@
     "filename": "[name].min.js"
   },
   "devDependencies": {
-    "@gibme/auto-pack": "^0.4.2",
+    "@gibme/auto-pack": "^0.4.6",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.11.7",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
@@ -62,7 +62,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@gibme/timer": "^1.0.12",
+    "@gibme/timer": "^1.0.13",
     "@types/ws": "^8.5.11",
     "buffer": "^6.0.3",
     "bufferutil": "^4.0.8",
