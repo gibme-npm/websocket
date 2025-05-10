@@ -21,24 +21,18 @@
 import { EventEmitter } from 'events';
 import { Buffer } from 'buffer';
 import Timer from '@gibme/timer';
-import WebSocket from 'isomorphic-ws';
+import IsoWebSocket from 'isomorphic-ws';
+export { Buffer };
 
-export enum WebSocketReadyState {
+enum WebSocketState {
     CONNECTING = 0,
     OPEN = 1,
     CLOSING = 2,
     CLOSED = 3
 }
 
-export interface WebSocketClientOptions {
-    url: string;
-    protocols?: string | string[];
-    binaryType?: 'arraybuffer' | 'nodebuffer' | 'fragments';
-    autoReconnect?: boolean;
-}
-
-export default class WebSocketClient extends EventEmitter {
-    private socket?: WebSocket;
+export class WebSocket extends EventEmitter {
+    private socket?: IsoWebSocket;
     private pre_ready_sent_messages: any[] = [];
     private timer?: Timer;
 
@@ -46,7 +40,7 @@ export default class WebSocketClient extends EventEmitter {
      * Constructs a new instances of the class
      * @param options
      */
-    constructor (private readonly options: WebSocketClientOptions) {
+    constructor (private readonly options: WebSocket.Options) {
         super();
 
         this.options.binaryType ??= 'arraybuffer';
@@ -94,7 +88,7 @@ export default class WebSocketClient extends EventEmitter {
     /**
      * Returns the underlying WebSocket's ready state
      */
-    public get readyState (): WebSocketReadyState {
+    public get readyState (): WebSocket.State {
         return this.socket?.readyState || 3;
     }
 
@@ -248,14 +242,14 @@ export default class WebSocketClient extends EventEmitter {
      */
     public open (): void {
         try {
-            this.socket = new WebSocket(this.options.url, this.options.protocols);
+            this.socket = new IsoWebSocket(this.options.url, this.options.protocols);
 
             this.binaryType = this.options.binaryType || 'arraybuffer';
 
             this.timer = new Timer(10, false);
 
             this.timer.on('tick', () => {
-                if (this.readyState === WebSocketReadyState.OPEN) {
+                if (this.readyState === WebSocketState.OPEN) {
                     this.timer?.destroy();
 
                     this.emit('ready');
@@ -342,7 +336,7 @@ export default class WebSocketClient extends EventEmitter {
      */
     public send (data: string | ArrayBufferLike | ArrayBufferView | Buffer): void {
         // if we try to send before we are ready, stack them up
-        if (this.readyState !== WebSocketReadyState.OPEN) {
+        if (this.readyState !== WebSocketState.OPEN) {
             this.pre_ready_sent_messages.push(data);
         } else {
             this.socket?.send(data);
@@ -350,4 +344,15 @@ export default class WebSocketClient extends EventEmitter {
     }
 }
 
-export { WebSocketClient, Buffer };
+export namespace WebSocket {
+    export type State = WebSocketState;
+
+    export type Options = {
+        url: string;
+        protocols?: string | string[];
+        binaryType?: 'arraybuffer' | 'nodebuffer' | 'fragments';
+        autoReconnect?: boolean;
+    }
+}
+
+export default WebSocket;
