@@ -1,6 +1,6 @@
 {
   "name": "@gibme/websocket",
-  "version": "20.0.0",
+  "version": "20.0.1",
   "description": "Simple Cross-Platform WebSocket Client Helper",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

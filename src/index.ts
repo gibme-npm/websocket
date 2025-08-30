@@ -37,7 +37,7 @@ export class WebSocket extends EventEmitter {
     private timer?: Timer;
 
     /**
-     * Constructs a new instances of the class
+     * Constructs a new instance of the class
      * @param options
      */
     constructor (private readonly options: WebSocket.Options) {
@@ -355,4 +355,5 @@ export namespace WebSocket {
     }
 }
 
+export { WebSocket as WebSocketClient };
 export default WebSocket;
