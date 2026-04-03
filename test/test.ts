@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import { it, describe, before, after } from 'mocha';
+import { it, describe, before, after } from 'node:test';
 import assert from 'assert';
 import WebSocketClient from '../src';
 
@@ -35,7 +35,7 @@ describe('Unit Tests', () => {
     });
 
     it('Send()', async () => {
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             socket.on('message', message => {
                 if (message.toString().includes('Request served by')) return;
 

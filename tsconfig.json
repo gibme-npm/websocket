@@ -9,8 +9,8 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
-    "downlevelIteration": true,
     "esModuleInterop": true,
     "sourceMap": true,
     "types": ["node"]
