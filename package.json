@@ -1,6 +1,6 @@
 {
   "name": "@gibme/websocket",
-  "version": "22.0.0",
+  "version": "22.0.1",
   "description": "Simple Cross-Platform WebSocket Client Helper",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -47,7 +47,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
-    "@gibme/auto-pack": "^22.0.0",
+    "@gibme/auto-pack": "^22.0.1",
     "@types/node": "^25.5.2",
     "@typescript-eslint/eslint-plugin": "^8.58.0",
     "@typescript-eslint/parser": "^8.58.0",
